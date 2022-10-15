@@ -1,8 +1,9 @@
+import React from 'react';
 import './App.css';
-import {useReducer} from "React"
+import { useReducer } from "react"
 import DigitButton from './DigitButton';
 
-const Actions ={
+export const ACTIONS = {
   ADD_DIGIT: "add-digit",
   CHOOSE_OPERATION: "choose-operation",
   CLEAR_FUNCTION: "clear-function",
@@ -14,7 +15,7 @@ function reducer(state,{type,payload}) {
   // eslint-disable-next-line default-case
   switch(type) {
 
-    case Actions.ADD_DIGIT:
+    case ACTIONS.ADD_DIGIT:
       if(state.overwrite) {
         return{
           ...state,
@@ -37,8 +38,11 @@ function reducer(state,{type,payload}) {
 }
 
 
-const Int1 = 199; // erase me later! I make line 35 happy for now!
-const INTEGER_FORMATTER = new Int1.NumberFormat("en-us", {maximumfractionDigits: 0})
+// eslint-disable-next-line no-use-before-define
+const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
+  maximumfractionDigits: 0,
+})
+
 
 function formatOperand(operand) {
   if(operand == null) return
