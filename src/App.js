@@ -1,7 +1,7 @@
 import './App.css';
-import {useReducer} from "React"
+import {useReducer} from "react"
 
-const Actions ={
+export const ACTIONS ={
   ADD_DIGIT: "add-digit",
   CHOOSE_OPERATION: "choose-operation",
   CLEAR_FUNCTION: "clear-function",
@@ -13,7 +13,7 @@ function reducer(state,{type,payload}) {
   // eslint-disable-next-line default-case
   switch(type) {
 
-    case Actions.ADD_DIGIT:
+    case ACTIONS.ADD_DIGIT:
       if(state.overwrite) {
         return{
           ...state,
@@ -36,8 +36,7 @@ function reducer(state,{type,payload}) {
 }
 
 
-const Int1 = 199; // erase me later! I make line 35 happy for now!
-const INTEGER_FORMATTER = new Int1.NumberFormat("en-us", {maximumfractionDigits: 0})
+const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {maximumfractionDigits: 0})
 
 function formatOperand(operand) {
   if(operand == null) return
@@ -69,23 +68,23 @@ const [{currentOperand, previousOperand, operation}, dispatch ] = useReducer(red
       </div>
 
       <div className="grid">
-        <button className="two-span">clear</button>
-        <button className="two-span">delete</button>
-        <button className="one-span">/</button>
-        <button className="one-span">1</button>
-        <button className="one-span">2</button>
-        <button className="one-span">3</button>
-        <button className="one-span">*</button>
-        <button className="one-span">4</button>
-        <button className="one-span">5</button>
-        <button className="one-span">6</button>
-        <button className="one-span">+</button>
-        <button className="one-span">7</button>
-        <button className="one-span">8</button>
-        <button className="one-span">9</button>
-        <button className="one-span">-</button>
-        <button className="one-span">0</button>
-        <button className="one-span">.</button>
+        <button className="two-span">CLEAR</button>
+        <button>DEL</button>
+        <button>/</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>*</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>+</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>-</button>
+        <button>0</button>
+        <button>.</button>
         <button className="two-span">=</button>
       </div>
     </div>
