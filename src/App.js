@@ -58,9 +58,8 @@ const [{currentOperand, previousOperand, operation}, dispatch ] = useReducer(red
 
 
   return (
-    <body>
+    <body className='grid'>
 
-    <div className="mainCalc">
       <div className="output">
         <div className="previous-operand">
           {formatOperand(previousOperand)}{operation}
@@ -70,30 +69,25 @@ const [{currentOperand, previousOperand, operation}, dispatch ] = useReducer(red
           {formatOperand(currentOperand)}
         </div>
         
-
       </div>
-
-      <div className="grid">
-        <button className="two-span">clear</button>
-        <button className="two-span">delete</button>
-        <button>/</button>
-        <DigitButton digit="1" dispatch={{dispatch}}>1</DigitButton>
-        <DigitButton digit="2" dispatch={{dispatch}}>1</DigitButton>
-        <DigitButton digit="3" dispatch={{dispatch}}>1</DigitButton>
-        <button>*</button>
-        <DigitButton digit="4" dispatch={{dispatch}}>1</DigitButton>
-        <DigitButton digit="5" dispatch={{dispatch}}>1</DigitButton>
-        <DigitButton digit="6" dispatch={{dispatch}}>1</DigitButton>
-        <button>+</button>
-        <DigitButton digit="7" dispatch={{dispatch}}>1</DigitButton>
-        <DigitButton digit="8" dispatch={{dispatch}}>1</DigitButton>
-        <DigitButton digit="9" dispatch={{dispatch}}>1</DigitButton>
-        <button>-</button>
-        <DigitButton digit="0" dispatch={{dispatch}}>1</DigitButton>
-        <button>.</button>
-        <button>=</button>
-      </div>
-    </div>
+      <button className="two-span">clear</button>
+      <button className="two-span">delete</button>
+      <button>/</button>
+      <DigitButton digit="1" dispatch={{dispatch}}>1</DigitButton>
+      <DigitButton digit="2" dispatch={{dispatch}}>1</DigitButton>
+      <DigitButton digit="3" dispatch={{dispatch}}>1</DigitButton>
+      <button>*</button>
+      <DigitButton digit="4" dispatch={{dispatch}}>1</DigitButton>
+      <DigitButton digit="5" dispatch={{dispatch}}>1</DigitButton>
+      <DigitButton digit="6" dispatch={{dispatch}}>1</DigitButton>
+      <button>+</button>
+      <DigitButton digit="7" dispatch={{dispatch}}>1</DigitButton>
+      <DigitButton digit="8" dispatch={{dispatch}}>1</DigitButton>
+      <DigitButton digit="9" dispatch={{dispatch}}>1</DigitButton>
+      <button>-</button>
+      <DigitButton digit="0" dispatch={{dispatch}}>1</DigitButton>
+      <button>.</button>
+      <button>=</button>
 
     </body>
   );
