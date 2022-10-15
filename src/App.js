@@ -1,5 +1,6 @@
 import './App.css';
 import {useReducer} from "React"
+import DigitButton from './DigitButton';
 
 const Actions ={
   ADD_DIGIT: "add-digit",
@@ -71,22 +72,22 @@ const [{currentOperand, previousOperand, operation}, dispatch ] = useReducer(red
       <div className="grid">
         <button className="two-span">clear</button>
         <button className="two-span">delete</button>
-        <button className="one-span">/</button>
-        <button className="one-span">1</button>
-        <button className="one-span">2</button>
-        <button className="one-span">3</button>
-        <button className="one-span">*</button>
-        <button className="one-span">4</button>
-        <button className="one-span">5</button>
-        <button className="one-span">6</button>
-        <button className="one-span">+</button>
-        <button className="one-span">7</button>
-        <button className="one-span">8</button>
-        <button className="one-span">9</button>
-        <button className="one-span">-</button>
-        <button className="one-span">0</button>
-        <button className="one-span">.</button>
-        <button className="two-span">=</button>
+        <button>/</button>
+        <DigitButton digit="1" dispatch={{dispatch}}>1</DigitButton>
+        <DigitButton digit="2" dispatch={{dispatch}}>1</DigitButton>
+        <DigitButton digit="3" dispatch={{dispatch}}>1</DigitButton>
+        <button>*</button>
+        <DigitButton digit="4" dispatch={{dispatch}}>1</DigitButton>
+        <DigitButton digit="5" dispatch={{dispatch}}>1</DigitButton>
+        <DigitButton digit="6" dispatch={{dispatch}}>1</DigitButton>
+        <button>+</button>
+        <DigitButton digit="7" dispatch={{dispatch}}>1</DigitButton>
+        <DigitButton digit="8" dispatch={{dispatch}}>1</DigitButton>
+        <DigitButton digit="9" dispatch={{dispatch}}>1</DigitButton>
+        <button>-</button>
+        <DigitButton digit="0" dispatch={{dispatch}}>1</DigitButton>
+        <button>.</button>
+        <button>=</button>
       </div>
     </div>
 
